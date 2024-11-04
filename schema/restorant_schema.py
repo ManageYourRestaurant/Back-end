@@ -1,2 +1,5 @@
-class restorant(Base):
-    
+from pydantic import BaseModel
+
+
+class restorant(BaseModel):
+    pass

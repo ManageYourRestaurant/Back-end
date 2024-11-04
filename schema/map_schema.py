@@ -1,7 +1,9 @@
 from typing import Optional
 
+from pydantic import BaseModel
 
-class map_search_request:
+
+class map_search_request(BaseModel):
     keyword: Optional[str]
     my_location_latitude: Optional[float]
     my_location_longitude: Optional[float]
