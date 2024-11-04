@@ -9,10 +9,10 @@ class ApiTest(TestCase):
         self.password = ""
         self.db_session = ""
 
-    def test_login(self):
+    def test_join(self):
         pass
 
-    def test_join(self):
+    def test_login(self):
         pass
 
     def test_search(self):
