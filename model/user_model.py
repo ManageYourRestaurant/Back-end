@@ -1,9 +1,6 @@
-from sqlalchemy import Column, String
+from fastapi_users_db_sqlalchemy import SQLAlchemyBaseUserTableUUID
 from config.db_config import Base
 
 
-class UserModel(Base):
+class UserModel(SQLAlchemyBaseUserTableUUID, Base):
     __tablename__ = "user"
-    user_id: str = Column(String)
-    email: str = Column(String, unique=True)
-    password: str = Column(String, unique=True)

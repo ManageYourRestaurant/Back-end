@@ -1,0 +1,12 @@
+
+#-----------------------------
+# docker run -d \
+#   --name postgres16_container \
+#   -e POSTGRES_USER=map_service \
+#   -e POSTGRES_PASSWORD=map_service \
+#   -e POSTGRES_DB=map_service \
+#   -p 5432:5432 \
+#   -v postgres16_data:/var/lib/postgresql/data \
+#   postgres:16
+
+#--------------------------------------

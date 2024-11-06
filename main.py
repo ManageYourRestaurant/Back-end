@@ -7,7 +7,7 @@ from api.router.router import api_router
 
 
 app = FastAPI()
-app.include_router(router=total_test_router)
+# app.include_router(router=total_test_router)
 app.include_router(router=api_router)
 if __name__ == "__main__":
     # Gunicorn 서버를 Python 코드 내에서 실행

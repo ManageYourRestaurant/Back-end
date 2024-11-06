@@ -1,5 +1,7 @@
 from gunicorn.app.base import BaseApplication
 
+from config.db_config import create_db
+
 
 class CustomGunicornApp(BaseApplication):
     def __init__(self, app):
@@ -10,6 +12,7 @@ class CustomGunicornApp(BaseApplication):
             "worker_class": "uvicorn.workers.UvicornWorker",  # Uvicorn ASGI 워커
             "loglevel": "info",  # 로그 레벨 설정
         }
+        create_db()
         super().__init__()
 
     def load_config(self):
