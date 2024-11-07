@@ -1,4 +1,8 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+from sqlalchemy.ext.asyncio import AsyncSession
+from config.db_config import get_async_session
+from schema.restorant_schema import RestorantResponse
+from service.map_service import MapService
 
 map_router = APIRouter()
 
@@ -9,4 +13,7 @@ async def get_restorant_list():
     return True
 
 
-#
+@map_router.get("/restorant", description="가게 하나를 리턴", response_model=RestorantResponse)
+async def get_restorant_by_id(restorant_id: str, session: AsyncSession = Depends(get_async_session)) -> RestorantResponse:
+    res = await MapService(session=session).get_restorant_by_id(restorant_id=restorant_id)
+    return res

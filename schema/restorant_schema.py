@@ -1,5 +1,10 @@
 from pydantic import BaseModel
 
 
-class restorant(BaseModel):
+class Restorant(BaseModel):
+    restorant_id: str
+    name: str
+
+
+class RestorantResponse(Restorant):
     pass
